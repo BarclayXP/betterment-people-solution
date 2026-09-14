@@ -1,0 +1,11 @@
+# Booking form submissions contain people's personal details, so never store them here.
+storage/*
+!storage/.htaccess
+
+# Local tools and system files
+.venv/
+.vscode/
+*.log
+Thumbs.db
+desktop.ini
+.DS_Store
