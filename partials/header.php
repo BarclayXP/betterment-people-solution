@@ -33,7 +33,7 @@ $fullTitle = $pageTitle . ' | Betterment People Solutions';
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
     <script src="assets/js/early.js"></script>
     <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>

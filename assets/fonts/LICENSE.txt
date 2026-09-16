@@ -4,7 +4,7 @@ SIL Open Font License, Version 1.1: https://openfontlicense.org/open-font-licens
 manrope-latin.woff2
   Manrope. Copyright 2018 The Manrope Project Authors (https://github.com/sharanda/manrope)
 
-space-grotesk-latin.woff2
-  Space Grotesk. Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
+lora-latin.woff2
+  Lora. Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic)
 
 Both files were downloaded from Google Fonts (Latin character set).

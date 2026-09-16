@@ -14,11 +14,11 @@
 }
 
 @font-face {
-    font-family: 'Space Grotesk';
+    font-family: 'Lora';
     font-style: normal;
     font-weight: 500 700;
     font-display: swap;
-    src: url('../fonts/space-grotesk-latin.woff2') format('woff2');
+    src: url('../fonts/lora-latin.woff2') format('woff2');
 }
 
 :root {
@@ -55,6 +55,9 @@
     --space-6: 80px;
     --container: 1200px;
     --header-height: 76px;
+
+    --font-body: 'Manrope', 'Segoe UI', Roboto, Arial, sans-serif;
+    --font-heading: 'Lora', Georgia, 'Times New Roman', serif;
 }
 
 * {
@@ -72,7 +75,7 @@ html {
 }
 
 body {
-    font-family: 'Manrope', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 1rem;
     color: var(--text);
     background: var(--bg-page);
@@ -84,17 +87,18 @@ body {
 h1,
 h2,
 h3 {
-    font-family: 'Space Grotesk', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-heading);
+    font-weight: 600;
     color: var(--ink);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     margin: 0 0 var(--space-2);
-    line-height: 1.15;
+    line-height: 1.2;
 }
 
 h1 {
-    font-size: clamp(2.3rem, 5vw, 3.85rem);
-    line-height: 1.06;
-    letter-spacing: -0.035em;
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
 }
 
 h2 {
@@ -207,9 +211,9 @@ ol {
 }
 
 .brand-name {
-    font-family: 'Space Grotesk', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 1.28rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: -0.02em;
     color: var(--ink);
 }
@@ -613,7 +617,7 @@ ol {
 }
 
 .service-number {
-    font-family: 'Space Grotesk', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 600;
     line-height: 1;
@@ -757,7 +761,7 @@ ol {
     background: var(--bg-card);
     border: 2px solid var(--primary);
     color: var(--primary);
-    font-family: 'Space Grotesk', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
 }
 
@@ -782,11 +786,11 @@ ol {
 
 .stat-value {
     margin-bottom: 6px;
-    font-family: 'Space Grotesk', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(3rem, 6vw, 4.2rem);
     font-weight: 700;
     line-height: 1;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.02em;
     color: var(--primary);
 }
 
@@ -947,7 +951,7 @@ ol {
     width: 100%;
     margin-bottom: 20px;
     padding: 0;
-    font-family: 'Space Grotesk', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.12rem;
     font-weight: 700;
     color: var(--ink);
@@ -1230,7 +1234,7 @@ textarea.input {
 
 .footer-heading {
     margin-bottom: 20px;
-    font-family: 'Manrope', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.14em;
