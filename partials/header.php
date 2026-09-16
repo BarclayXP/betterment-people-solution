@@ -5,7 +5,7 @@ if (!isset($pageTitle)) {
     $pageTitle = 'Betterment People Solutions';
 }
 if (!isset($pageDescription)) {
-    $pageDescription = 'People strategy and HR consultancy services for businesses at every stage.';
+    $pageDescription = 'People and business growth consultancy services for businesses at every stage.';
 }
 if (!isset($currentPage)) {
     $currentPage = '';

@@ -1,6 +1,6 @@
 # Betterment People Solutions
 
-The website for Betterment People Solutions, a founder-led people and HR consultancy based in London.
+The website for Betterment People Solutions, a founder-led people and business growth consultancy based in London.
 
 Live address (once published): www.betterment-consulting.com
 

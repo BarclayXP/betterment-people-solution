@@ -1,6 +1,6 @@
 <?php
-$pageTitle = 'People Strategy Consulting for Modern Businesses';
-$pageDescription = 'Betterment People Solutions supports businesses with people strategy, HR leadership, and change management that drives measurable outcomes.';
+$pageTitle = 'People & Business Growth Consultancy';
+$pageDescription = 'Betterment People Solutions provides practical, people-focused solutions for your business: people strategy, leadership and performance, growth and change, and employee relations advice.';
 $currentPage = 'home';
 
 $services = [
@@ -46,7 +46,7 @@ $process = [
 
 $testimonials = [
     [
-        'quote' => 'Their people strategy support helped us modernize workforce planning during a critical period of change.',
+        'quote' => 'Their people strategy support helped us modernise workforce planning during a critical period of change.',
         'name' => 'Senior Leader',
         'role' => 'Judiciary'
     ],
@@ -68,11 +68,11 @@ include __DIR__ . '/partials/header.php';
 ?>
 
 <section class="hero">
-    <div class="page-container hero-grid">
+    <div class="page-container">
         <div class="hero-copy fade-in-up">
-            <p class="eyebrow">People and HR Consultancy &middot; London</p>
+            <p class="eyebrow">People &amp; Business Growth Consultancy &middot; London</p>
             <h1>Build Stronger Teams.<br><span class="text-brand">Deliver Better Outcomes.</span></h1>
-            <p class="lead"><?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?></p>
+            <p class="lead">Providing practical, people-focused solutions for your business.</p>
             <div class="hero-actions">
                 <a class="button-primary" href="contact.php#booking-form">Book a Consultation <?php echo icon('arrow-right'); ?></a>
                 <a class="button-secondary" href="services.php">Explore Services</a>
@@ -82,19 +82,6 @@ include __DIR__ . '/partials/header.php';
                 <li><?php echo icon('file-text'); ?>Fixed-fee projects or ongoing support</li>
             </ul>
         </div>
-        <aside class="hero-panel fade-in-up delay-1">
-            <div class="hero-panel-logo">
-                <img src="assets/img/logo-full.png" alt="Betterment People Solutions logo" width="509" height="469">
-            </div>
-            <div class="hero-panel-body">
-                <h2>What You Can Expect</h2>
-                <ul class="list-check">
-                    <li>Practical advice grounded in business context</li>
-                    <li>People strategies aligned to company goals</li>
-                    <li>Support for leadership, engagement, and change</li>
-                </ul>
-            </div>
-        </aside>
     </div>
 </section>
 

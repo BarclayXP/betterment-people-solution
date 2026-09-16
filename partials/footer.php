@@ -9,7 +9,7 @@
                         <span class="brand-tagline">People Solutions</span>
                     </span>
                 </a>
-                <p>Strategic people and HR advisory for startups, growing firms, and established institutions.</p>
+                <p>People and business growth consultancy for start-ups, growing firms and established organisations.</p>
                 <a class="footer-social" href="https://www.linkedin.com/company/betterment-people-solutions/" target="_blank" rel="noopener noreferrer">
                     <?php echo icon('linkedin'); ?><span>Follow us on LinkedIn</span>
                 </a>
