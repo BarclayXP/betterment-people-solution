@@ -33,7 +33,10 @@ function router_is_blocked(string $path): bool
 
     $root = realpath(__DIR__);
     $first = strtolower($segments[0]);
-    $private = ['includes', 'partials', 'storage', 'router.php', 'start-site.bat'];
+    $private = [
+        'includes', 'partials', 'storage',
+        'router.php', 'start-site.bat', 'readme.md', 'website content.pdf', 'website content.txt',
+    ];
     if (in_array($first, $private, true)) {
         return true;
     }

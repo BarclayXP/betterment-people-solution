@@ -1,0 +1,11 @@
+# Extra protection for the live website on Apache or LiteSpeed hosting.
+# (router.php does the same job when the site runs on your own computer.)
+
+<IfModule mod_alias.c>
+    # Hidden files and folders, such as .git and .htaccess. The .well-known folder stays
+    # reachable because web hosts use it to set up the https certificate.
+    RedirectMatch 404 "/\.(?!well-known/)"
+
+    # Working files that belong in the project folder but not on the public website.
+    RedirectMatch 404 "(?i)/(README\.md|router\.php|start-site\.bat|Website Content\.(pdf|txt))$"
+</IfModule>

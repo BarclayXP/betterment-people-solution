@@ -47,12 +47,14 @@ When editing wording, change only the words themselves. Leave the quote marks, b
 
 ## Before the website goes live
 
-- [ ] Choose web hosting that supports PHP (most standard hosting plans do).
+- [ ] Choose web hosting that supports PHP 7.4 or newer (most standard hosting plans do). Apache or LiteSpeed hosting is best, because the site's protection files (`.htaccess`) work there.
+- [ ] Turn on HTTPS (the padlock) in your hosting control panel, including the option to always redirect to HTTPS.
 - [ ] Check the email addresses in `includes/config.php`. The "from" address should be on your own domain, so emails don't end up in spam.
 - [ ] Send a test booking on the live site and confirm the email arrives.
 - [ ] Make sure the `storage` folder on the server can be written to, so bookings can be saved.
+- [ ] Check the private folders are blocked: open www.betterment-consulting.com/storage/.htaccess and www.betterment-consulting.com/includes/config.php in a browser. Both must show an error page, not a file.
 - [ ] Confirm the client comments on the home page are real quotes you have permission to use.
-- [ ] Upload only the website files. Leave out `Website Content.pdf`, `Website Content.txt`, `start-site.bat`, `router.php` and this README.
+- [ ] Upload only the website files. Leave out the `.git` folder, `Website Content.pdf`, `Website Content.txt`, `start-site.bat`, `router.php` and this README.
 
 ## Other files in this folder
 
