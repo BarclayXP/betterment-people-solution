@@ -6,7 +6,11 @@ $pageTitle = 'Book a Consultation';
 $pageDescription = 'Contact Betterment People Solutions and book a consultation slot with the team.';
 $currentPage = 'contact';
 
-session_set_cookie_params(['httponly' => true, 'samesite' => 'Lax']);
+// Only accept session IDs this site created, and keep the cookie away from scripts,
+// other websites and (on the live https site) unencrypted connections.
+ini_set('session.use_strict_mode', '1');
+ini_set('session.use_only_cookies', '1');
+session_set_cookie_params(['httponly' => true, 'samesite' => 'Lax', 'secure' => site_is_https()]);
 session_start();
 if (empty($_SESSION['contact_token'])) {
     $_SESSION['contact_token'] = bin2hex(random_bytes(32));
@@ -28,6 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // The hidden field was filled in, so this is almost certainly a spam bot. Drop it quietly.
         header('Location: contact.php', true, 303);
         exit;
+    } elseif (!$errors && !contact_allow_submission($config['storage_dir'], (string) ($_SERVER['REMOTE_ADDR'] ?? ''), (int) $config['max_submissions_per_day'])) {
+        $formError = 'You have already sent several requests today. Please email ' . $config['contact_email']
+            . ' or call ' . $config['contact_phone'] . ' and we will be happy to help.';
     } elseif (!$errors) {
         $record = $values;
         $record['submitted_at'] = date('Y-m-d H:i:s');

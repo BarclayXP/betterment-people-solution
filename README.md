@@ -16,8 +16,9 @@ Live address (once published): www.betterment-consulting.com
 1. A visitor fills in their details, picks a consultation slot and writes a short message.
 2. Slots are offered on weekdays at 10:00 AM and 2:00 PM, over the next two weeks.
 3. The request is emailed to partners@betterment-consulting.com. If the visitor gives an extra email address, they get a copy of their booking.
-4. Every request is also saved in a spreadsheet file called `submissions.csv` inside the `storage` folder, so nothing is lost if an email fails. You can open this file in Excel.
+4. Every request is also saved in a spreadsheet file inside the `storage` folder, so nothing is lost if an email fails. Its name starts with `submissions-` followed by random letters and numbers, so nobody can guess its web address. You can open it in Excel.
 5. Once a slot is booked, it disappears from the list so no one else can book it.
+6. One visitor can send up to 3 requests a day. This stops bots filling the inbox or booking up every slot. You can change the number in `includes/config.php`.
 
 The saved bookings stay on the computer or web server running the site. They are deliberately never added to this repository, because they contain people's personal details.
 
@@ -53,8 +54,25 @@ When editing wording, change only the words themselves. Leave the quote marks, b
 - [ ] Send a test booking on the live site and confirm the email arrives.
 - [ ] Make sure the `storage` folder on the server can be written to, so bookings can be saved.
 - [ ] Check the private folders are blocked: open www.betterment-consulting.com/storage/.htaccess and www.betterment-consulting.com/includes/config.php in a browser. Both must show an error page, not a file.
+- [ ] Add a privacy notice explaining how you use the details people send through the form, and how long you keep them (a UK GDPR requirement).
 - [ ] Confirm the client comments on the home page are real quotes you have permission to use.
 - [ ] Upload only the website files. Leave out the `.git` folder, `Website Content.pdf`, `Website Content.txt`, `start-site.bat`, `router.php` and this README.
+
+## Keeping the website secure
+
+The site already includes these protections, so there is nothing to switch on:
+
+- **Booking form:** blocks forged submissions and spam bots, checks everything people type, and limits how many requests one visitor can send.
+- **Personal data:** saved bookings are kept in a private folder with an unguessable file name, and are never added to this repository.
+- **Browser protection:** the site tells browsers to load only its own files, never to show it inside another website, and to use a secure connection once HTTPS is on.
+- **No third parties:** fonts are served from the website itself, so visitors' details are not shared with Google.
+- **Error messages:** technical details are never shown to visitors on the live site.
+
+Good habits:
+
+- Download the bookings file regularly, then delete old bookings you no longer need.
+- Keep your hosting account and email password strong, and turn on two-step login where offered.
+- Ask your host to keep PHP up to date.
 
 ## Other files in this folder
 

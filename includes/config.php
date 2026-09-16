@@ -11,6 +11,10 @@ return [
 
     'timezone' => 'Europe/London',
 
+    // How many booking requests one visitor (one internet connection) can send in
+    // 24 hours. Stops bots flooding the inbox or booking up every consultation slot.
+    'max_submissions_per_day' => 3,
+
     // Every form submission is also saved here as submissions.csv (opens in Excel),
     // so no booking is lost if an email fails to send.
     'storage_dir' => dirname(__DIR__) . DIRECTORY_SEPARATOR . 'storage',

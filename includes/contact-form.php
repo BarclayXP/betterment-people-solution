@@ -46,9 +46,69 @@ const CONTACT_CALLBACK_OPTIONS = [
 const CONTACT_MAX_MESSAGE_CHARS = 500;
 const CONTACT_MAX_MESSAGE_WORDS = 250;
 
+/**
+ * The bookings file has a random name (submissions-<random>.csv), so even if a web
+ * server ignored the folder's .htaccess protection, nobody could guess its address.
+ */
 function contact_csv_path(array $config): string
 {
-    return rtrim($config['storage_dir'], '/\\') . DIRECTORY_SEPARATOR . 'submissions.csv';
+    $dir = rtrim($config['storage_dir'], '/\\');
+    $existing = glob($dir . DIRECTORY_SEPARATOR . 'submissions-*.csv') ?: [];
+    if ($existing) {
+        sort($existing);
+        return $existing[0];
+    }
+    return $dir . DIRECTORY_SEPARATOR . 'submissions-' . bin2hex(random_bytes(12)) . '.csv';
+}
+
+/**
+ * Allows at most $maxPerDay successful submissions from one IP address in 24 hours.
+ * Addresses are stored only as salted hashes and forgotten after a day.
+ * Returns true if this submission may go ahead (and counts it).
+ */
+function contact_allow_submission(string $storageDir, string $ip, int $maxPerDay): bool
+{
+    $path = rtrim($storageDir, '/\\') . DIRECTORY_SEPARATOR . 'rate-limit.json';
+    if (!is_dir(dirname($path)) && !@mkdir(dirname($path), 0755, true)) {
+        return true; // Never turn real visitors away just because the file cannot be written.
+    }
+    $handle = @fopen($path, 'c+');
+    if ($handle === false) {
+        return true;
+    }
+    flock($handle, LOCK_EX);
+
+    $data = json_decode((string) stream_get_contents($handle), true);
+    if (!is_array($data) || !is_string($data['salt'] ?? null) || !is_array($data['hits'] ?? null)) {
+        $data = ['salt' => bin2hex(random_bytes(16)), 'hits' => []];
+    }
+
+    $now = time();
+    foreach ($data['hits'] as $key => $times) {
+        $recent = array_values(array_filter((array) $times, function ($time) use ($now) {
+            return is_int($time) && $time > $now - 86400;
+        }));
+        if ($recent) {
+            $data['hits'][$key] = $recent;
+        } else {
+            unset($data['hits'][$key]);
+        }
+    }
+
+    $visitor = hash_hmac('sha256', $ip, $data['salt']);
+    $allowed = count($data['hits'][$visitor] ?? []) < $maxPerDay;
+    if ($allowed) {
+        $data['hits'][$visitor][] = $now;
+    }
+
+    ftruncate($handle, 0);
+    rewind($handle);
+    fwrite($handle, json_encode($data));
+    fflush($handle);
+    flock($handle, LOCK_UN);
+    fclose($handle);
+
+    return $allowed;
 }
 
 /**
@@ -305,13 +365,15 @@ function contact_send_emails(array $config, array $record): bool
     }
 
     if ($record['alt_email'] !== '') {
+        // This email goes to an address typed into the form, so it deliberately contains
+        // nothing the visitor wrote. That makes it useless for sending spam to other people.
         $copyBody = implode("\r\n", [
-            'Hello ' . $record['name'] . ',',
+            'Hello,',
             '',
             'Thank you for your consultation request with Betterment People Solutions.',
             '',
             'Requested slot: ' . $record['booking_label'],
-            'Call back: ' . $callback,
+            'Call back requested: ' . CONTACT_CALLBACK_OPTIONS[$record['callback']],
             '',
             'We will be in touch to confirm. If anything needs to change, reply to this email or call us on ' . $config['contact_phone'] . '.',
             '',
