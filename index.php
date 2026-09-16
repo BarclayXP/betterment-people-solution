@@ -46,7 +46,10 @@ $sectors = ['Financial services', 'Government', 'Judiciary', 'Metropolitan Polic
 include __DIR__ . '/partials/header.php';
 ?>
 
-<section class="hero">
+<section class="hero hero-photo">
+    <div class="hero-media" aria-hidden="true">
+        <img src="assets/img/photo-executive-meeting.jpg" srcset="assets/img/photo-executive-meeting-960.jpg 960w, assets/img/photo-executive-meeting.jpg 1920w" sizes="(max-width: 980px) 100vw, 64vw" alt="" width="1920" height="1280" fetchpriority="high">
+    </div>
     <div class="page-container">
         <div class="hero-copy fade-in-up">
             <p class="eyebrow">People &amp; Business Growth Consultancy &middot; London</p>
@@ -89,6 +92,9 @@ include __DIR__ . '/partials/header.php';
             <p class="eyebrow">How We Work</p>
             <h2>A Structured Approach to People and Business Impact</h2>
             <p class="lead">Each engagement is tailored to your needs, from everyday HR support to strategic change programmes.</p>
+            <div class="section-photo fade-in">
+                <img src="assets/img/photo-team-desk.jpg" srcset="assets/img/photo-team-desk-640.jpg 640w, assets/img/photo-team-desk.jpg 1050w" sizes="(max-width: 1240px) 45vw, 560px" alt="" width="1050" height="1050" loading="lazy">
+            </div>
         </div>
         <ol class="timeline">
             <?php foreach ($process as $phase): ?>

@@ -30,7 +30,10 @@ $engagementModels = [
 include __DIR__ . '/partials/header.php';
 ?>
 
-<section class="hero hero-compact">
+<section class="hero hero-compact hero-photo">
+    <div class="hero-media" aria-hidden="true">
+        <img src="assets/img/photo-coffee-meeting.jpg" srcset="assets/img/photo-coffee-meeting-960.jpg 960w, assets/img/photo-coffee-meeting.jpg 1920w" sizes="(max-width: 980px) 100vw, 64vw" alt="" width="1920" height="1280" fetchpriority="high">
+    </div>
     <div class="page-container">
         <div class="hero-copy fade-in-up">
             <p class="eyebrow">Our Services</p>

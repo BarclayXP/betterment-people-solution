@@ -543,6 +543,64 @@ ol {
     color: var(--accent);
 }
 
+/* Stock photo that fades into the page behind the hero text. */
+.hero-photo {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.hero-media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 64%;
+    pointer-events: none;
+}
+
+.hero-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    filter: saturate(0.85);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.55) 30%, #000 65%);
+    mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.55) 30%, #000 65%);
+}
+
+/* Softens the bottom edge so the photo melts into the next section. */
+.hero-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(246, 248, 251, 0) 60%, var(--bg-page) 100%);
+}
+
+.hero-photo .hero-copy {
+    max-width: 720px;
+}
+
+/* Softly faded photo under a section introduction. */
+.section-photo {
+    margin-top: var(--space-4);
+}
+
+.section-photo img {
+    display: block;
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover;
+    object-position: center 35%;
+    border-radius: var(--radius-xl);
+    opacity: 0.75;
+    filter: saturate(0.85);
+    -webkit-mask-image: linear-gradient(180deg, #000 45%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 45%, transparent 100%);
+}
+
 /* ===== CARDS ===== */
 .card {
     padding: var(--space-4);
@@ -1329,6 +1387,22 @@ textarea.input {
 
     .speciality-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* On narrower screens the photo sits behind the text, so it is kept very faint. */
+    .hero-media {
+        width: 100%;
+    }
+
+    .section-photo {
+        display: none;
+    }
+
+    .hero-media img {
+        opacity: 0.16;
+        object-position: 70% center;
+        -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%);
+        mask-image: linear-gradient(180deg, #000 0%, #000 55%, transparent 100%);
     }
 
     .proof-stat {

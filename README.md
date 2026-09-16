@@ -44,6 +44,7 @@ Emails are not sent when the site runs on your own computer, but bookings are st
 | The "Book a Consultation" banner at the bottom of pages | `partials/cta.php` |
 | Menu at the top, or the footer at the bottom | `partials/header.php` and `partials/footer.php` |
 | Colours, spacing and fonts | `assets/css/style.css` |
+| Photos | `assets/img` (files starting `photo-`) |
 
 When editing wording, change only the words themselves. Leave the quote marks, brackets and other symbols around them exactly as they are.
 
