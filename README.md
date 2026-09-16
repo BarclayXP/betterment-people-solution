@@ -36,6 +36,7 @@ Emails are not sent when the site runs on your own computer, but bookings are st
 | To change... | Edit this file |
 | --- | --- |
 | Contact email, phone number or the address emails are sent from (updates every page) | `includes/config.php` |
+| The four services: names, summaries and what each includes (updates the Home and Services pages) | `includes/services.php` |
 | Home page wording | `index.php` |
 | Services page wording | `services.php` |
 | About page wording | `about.php` |

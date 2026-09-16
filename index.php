@@ -3,28 +3,7 @@ $pageTitle = 'People & Business Growth Consultancy';
 $pageDescription = 'Betterment People Solutions provides practical, people-focused solutions for your business: people strategy, leadership and performance, growth and change, and employee relations advice.';
 $currentPage = 'home';
 
-$services = [
-    [
-        'title' => 'Strategic People Partner Retainer',
-        'text' => 'Ongoing advisory support to align your annual people priorities with business goals and growth plans.',
-        'icon' => 'users'
-    ],
-    [
-        'title' => 'People Strategy Design',
-        'text' => 'Tailored people strategies covering workforce planning, leadership capability, and performance design.',
-        'icon' => 'compass'
-    ],
-    [
-        'title' => 'Engagement and Performance',
-        'text' => 'Frameworks to drive engagement and evaluate performance across your leadership ecosystem.',
-        'icon' => 'trending-up'
-    ],
-    [
-        'title' => 'Change Management',
-        'text' => 'Practical support for organisational change, adoption, and communication during business transformation.',
-        'icon' => 'refresh'
-    ]
-];
+$services = require __DIR__ . '/includes/services.php';
 
 $process = [
     [
@@ -96,7 +75,7 @@ include __DIR__ . '/partials/header.php';
                 <article class="card service-card fade-in-up delay-<?php echo $index; ?>">
                     <div class="icon-badge"><?php echo icon($service['icon']); ?></div>
                     <h3><?php echo htmlspecialchars($service['title'], ENT_QUOTES, 'UTF-8'); ?></h3>
-                    <p><?php echo htmlspecialchars($service['text'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    <p><?php echo htmlspecialchars($service['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
                 </article>
             <?php endforeach; ?>
         </div>

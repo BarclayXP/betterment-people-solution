@@ -583,9 +583,21 @@ ol {
     font-size: 0.97rem;
 }
 
+.services-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+}
+
 .services-detail-grid .card {
     display: flex;
     flex-direction: column;
+    border-top: 4px solid var(--primary);
+}
+
+.services-detail-grid .card:nth-child(4n + 2),
+.services-detail-grid .card:nth-child(4n + 3) {
+    border-top-color: var(--accent);
 }
 
 .service-detail-top {
@@ -600,26 +612,33 @@ ol {
     margin-bottom: 0;
 }
 
+.service-number {
+    font-family: 'Space Grotesk', 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--border-strong);
+}
+
 .service-detail h2 {
-    font-size: 1.4rem;
+    font-size: 1.55rem;
+    margin-bottom: var(--space-1);
+}
+
+.service-summary {
+    color: var(--ink);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.service-detail .list-check {
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--border);
 }
 
 .card-link {
     margin-top: auto;
     padding-top: var(--space-3);
-}
-
-.pill {
-    display: inline-flex;
-    margin: 0;
-    padding: 0.3rem 0.8rem;
-    border-radius: 999px;
-    background: var(--accent-soft);
-    color: var(--accent-strong);
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
 }
 
 .feature-row {
@@ -1358,6 +1377,7 @@ textarea.input {
 
 @media (max-width: 640px) {
     .services-grid,
+    .services-detail-grid,
     .form-grid {
         grid-template-columns: minmax(0, 1fr);
     }

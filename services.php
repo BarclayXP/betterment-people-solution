@@ -1,43 +1,9 @@
 <?php
-$pageTitle = 'People and HR Services';
-$pageDescription = 'Explore Betterment People Solutions service lines for people strategy, engagement, and change management.';
+$pageTitle = 'People and Business Growth Services';
+$pageDescription = 'Explore Betterment People Solutions services: people strategy, leadership and performance, growth and change, and employee relations and people advice.';
 $currentPage = 'services';
 
-$serviceDetails = [
-    [
-        'title' => 'Strategic People Partner Retainer',
-        'duration' => 'Ongoing',
-        'icon' => 'users',
-        'description' => 'A retained partnership to align annual people strategy with business goals and leadership priorities.',
-        'items' => [
-            'Quarterly people planning cycles',
-            'Leadership advisory and coaching',
-            'Business-aligned workforce priorities'
-        ]
-    ],
-    [
-        'title' => 'People Strategy Design and Curation',
-        'duration' => '4-8 weeks',
-        'icon' => 'compass',
-        'description' => 'Design a tailored people strategy that supports growth, culture, and capability development.',
-        'items' => [
-            'Organisational capability review',
-            'Workforce and talent strategy design',
-            'Implementation roadmap and governance'
-        ]
-    ],
-    [
-        'title' => 'Engagement, Performance, and Change Management',
-        'duration' => 'Project based',
-        'icon' => 'trending-up',
-        'description' => 'Support programmes that improve engagement, evaluate performance, and deliver sustainable organisational change.',
-        'items' => [
-            'Engagement and performance frameworks',
-            'Change impact and communication planning',
-            'Leadership ecosystem improvement'
-        ]
-    ]
-];
+$services = require __DIR__ . '/includes/services.php';
 
 $engagementModels = [
     [
@@ -58,9 +24,9 @@ include __DIR__ . '/partials/header.php';
 <section class="hero hero-compact">
     <div class="page-container">
         <div class="hero-copy fade-in-up">
-            <p class="eyebrow">Service Portfolio</p>
-            <h1>People Services Designed for Business Impact</h1>
-            <p class="lead">We offer flexible support from strategic retainers to focused delivery programmes, depending on your current priorities.</p>
+            <p class="eyebrow">Our Services</p>
+            <h1>People Services Designed for Business Growth</h1>
+            <p class="lead">From people strategy to complex workplace matters, we offer flexible, practical support shaped around what your business needs today.</p>
             <div class="hero-actions">
                 <a class="button-primary" href="contact.php#booking-form">Discuss Your Needs <?php echo icon('arrow-right'); ?></a>
             </div>
@@ -69,15 +35,15 @@ include __DIR__ . '/partials/header.php';
 </section>
 
 <section class="section">
-    <div class="page-container card-grid services-detail-grid">
-        <?php foreach ($serviceDetails as $index => $service): ?>
-            <article class="card service-detail fade-in-up delay-<?php echo $index; ?>">
+    <div class="page-container services-detail-grid">
+        <?php foreach ($services as $index => $service): ?>
+            <article class="card service-detail fade-in-up delay-<?php echo $index % 2; ?>">
                 <div class="service-detail-top">
                     <div class="icon-badge"><?php echo icon($service['icon']); ?></div>
-                    <p class="pill"><?php echo htmlspecialchars($service['duration'], ENT_QUOTES, 'UTF-8'); ?></p>
+                    <span class="service-number"><?php echo sprintf('%02d', $index + 1); ?></span>
                 </div>
                 <h2><?php echo htmlspecialchars($service['title'], ENT_QUOTES, 'UTF-8'); ?></h2>
-                <p><?php echo htmlspecialchars($service['description'], ENT_QUOTES, 'UTF-8'); ?></p>
+                <p class="service-summary"><?php echo htmlspecialchars($service['summary'], ENT_QUOTES, 'UTF-8'); ?></p>
                 <ul class="list-check">
                     <?php foreach ($service['items'] as $item): ?>
                         <li><?php echo htmlspecialchars($item, ENT_QUOTES, 'UTF-8'); ?></li>
@@ -89,7 +55,7 @@ include __DIR__ . '/partials/header.php';
     </div>
 </section>
 
-<section class="section section-tint">
+<section class="section">
     <div class="page-container grid-2">
         <div class="section-intro">
             <p class="eyebrow">Ways to Work Together</p>
