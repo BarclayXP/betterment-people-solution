@@ -910,6 +910,11 @@ ol {
     font-size: 0.95rem;
 }
 
+.cta-secondary span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
 .cta-secondary:hover {
     color: #ffffff;
     text-decoration: underline;
@@ -1425,6 +1430,10 @@ textarea.input {
 
     .cta-band {
         padding: 40px 24px;
+    }
+
+    .cta-secondary {
+        font-size: 0.85rem;
     }
 
     .facts div {

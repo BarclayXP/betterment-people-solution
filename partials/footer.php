@@ -26,8 +26,8 @@
             <div>
                 <h2 class="footer-heading">Contact</h2>
                 <ul class="footer-contact">
-                    <li><?php echo icon('mail'); ?><a href="mailto:partners@betterment-consulting.com">partners@betterment-consulting.com</a></li>
-                    <li><?php echo icon('phone'); ?><a href="tel:+443301337737">03301337737</a></li>
+                    <li><?php echo icon('mail'); ?><a href="mailto:<?php echo htmlspecialchars($config['contact_email'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($config['contact_email'], ENT_QUOTES, 'UTF-8'); ?></a></li>
+                    <li><?php echo icon('phone'); ?><a href="<?php echo htmlspecialchars(phone_href($config['contact_phone']), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($config['contact_phone'], ENT_QUOTES, 'UTF-8'); ?></a></li>
                     <li><?php echo icon('map-pin'); ?><span>London, United Kingdom</span></li>
                     <li><?php echo icon('clock'); ?><span>Monday to Friday, 9:00 AM - 6:00 PM</span></li>
                 </ul>

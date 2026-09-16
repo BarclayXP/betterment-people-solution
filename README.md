@@ -15,7 +15,7 @@ Live address (once published): www.betterment-consulting.com
 
 1. A visitor fills in their details, picks a consultation slot and writes a short message.
 2. Slots are offered on weekdays at 10:00 AM and 2:00 PM, over the next two weeks.
-3. The request is emailed to partners@betterment-consulting.com. If the visitor gives an extra email address, they get a copy of their booking.
+3. The request is emailed to the contact address in `includes/config.php` (currently BettermentPSConsulting@outlook.com). If the visitor gives an extra email address, they get a copy of their booking.
 4. Every request is also saved in a spreadsheet file inside the `storage` folder, so nothing is lost if an email fails. Its name starts with `submissions-` followed by random letters and numbers, so nobody can guess its web address. You can open it in Excel.
 5. Once a slot is booked, it disappears from the list so no one else can book it.
 6. One visitor can send up to 3 requests a day. This stops bots filling the inbox or booking up every slot. You can change the number in `includes/config.php`.
@@ -35,7 +35,7 @@ Emails are not sent when the site runs on your own computer, but bookings are st
 
 | To change... | Edit this file |
 | --- | --- |
-| Contact email, phone number or the address emails are sent from | `includes/config.php` |
+| Contact email, phone number or the address emails are sent from (updates every page) | `includes/config.php` |
 | Home page wording | `index.php` |
 | Services page wording | `services.php` |
 | About page wording | `about.php` |

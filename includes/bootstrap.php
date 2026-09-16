@@ -10,6 +10,13 @@ $runningLocally = PHP_SAPI === 'cli-server';
 ini_set('display_errors', $runningLocally ? '1' : '0');
 ini_set('log_errors', '1');
 
+// Turns a UK phone number such as 0330 133 7737 into a link phones can dial (tel:+443301337737).
+function phone_href(string $phone): string
+{
+    $digits = preg_replace('/\D+/', '', $phone);
+    return 'tel:' . ($digits !== '' && $digits[0] === '0' ? '+44' . substr($digits, 1) : $digits);
+}
+
 function site_is_https(): bool
 {
     return (!empty($_SERVER['HTTPS']) && strtolower((string) $_SERVER['HTTPS']) !== 'off')

@@ -1,8 +1,8 @@
 <?php
 // Site settings. Check these before putting the site live.
 return [
-    // Booking and enquiry emails from the contact form are sent here.
-    'contact_email' => 'partners@betterment-consulting.com',
+    // Shown across the website, and booking and enquiry emails from the contact form are sent here.
+    'contact_email' => 'BettermentPSConsulting@outlook.com',
     'contact_phone' => '03301337737',
 
     // Sender address for emails the website sends. Use an address on your own

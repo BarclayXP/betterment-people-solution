@@ -220,11 +220,11 @@ include __DIR__ . '/partials/header.php';
                 <ul class="contact-list">
                     <li>
                         <span class="contact-icon"><?php echo icon('mail'); ?></span>
-                        <div><span class="contact-label">Email</span><a href="mailto:partners@betterment-consulting.com">partners@betterment-consulting.com</a></div>
+                        <div><span class="contact-label">Email</span><a href="mailto:<?php echo htmlspecialchars($config['contact_email'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo str_replace('@', '<wbr>@', htmlspecialchars($config['contact_email'], ENT_QUOTES, 'UTF-8')); ?></a></div>
                     </li>
                     <li>
                         <span class="contact-icon"><?php echo icon('phone'); ?></span>
-                        <div><span class="contact-label">Phone</span><a href="tel:+443301337737">03301337737</a></div>
+                        <div><span class="contact-label">Phone</span><a href="<?php echo htmlspecialchars(phone_href($config['contact_phone']), ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($config['contact_phone'], ENT_QUOTES, 'UTF-8'); ?></a></div>
                     </li>
                     <li>
                         <span class="contact-icon"><?php echo icon('linkedin'); ?></span>
