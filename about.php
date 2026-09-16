@@ -21,22 +21,6 @@ $values = [
     ]
 ];
 
-$facts = [
-    'Industry' => 'Human Resources Services',
-    'Approach' => 'Founder-led consultancy',
-    'Founded' => '2026',
-    'Headquarters' => 'London, GB',
-];
-
-$specialties = [
-    'Organisational development',
-    'Managerial coaching and soft skills training',
-    'Policy development',
-    'Employee relations',
-    'Rewards and benefits',
-    'Projects to scale business',
-];
-
 include __DIR__ . '/partials/header.php';
 ?>
 
@@ -113,44 +97,6 @@ include __DIR__ . '/partials/header.php';
                     <p><?php echo htmlspecialchars($value['text'], ENT_QUOTES, 'UTF-8'); ?></p>
                 </article>
             <?php endforeach; ?>
-        </div>
-    </div>
-</section>
-
-<section class="section section-tint">
-    <div class="page-container">
-        <div class="section-heading">
-            <p class="eyebrow">Company Facts</p>
-            <h2>Business Details</h2>
-        </div>
-        <div class="grid-2">
-            <article class="card fade-in-up">
-                <h3>At a Glance</h3>
-                <dl class="facts">
-                    <?php foreach ($facts as $label => $fact): ?>
-                        <div>
-                            <dt><?php echo htmlspecialchars($label, ENT_QUOTES, 'UTF-8'); ?></dt>
-                            <dd><?php echo htmlspecialchars($fact, ENT_QUOTES, 'UTF-8'); ?></dd>
-                        </div>
-                    <?php endforeach; ?>
-                    <div>
-                        <dt>Website</dt>
-                        <dd><a href="https://www.betterment-consulting.com" target="_blank" rel="noopener noreferrer">www.betterment-consulting.com</a></dd>
-                    </div>
-                    <div>
-                        <dt>LinkedIn</dt>
-                        <dd><a href="https://www.linkedin.com/company/betterment-people-solutions/" target="_blank" rel="noopener noreferrer">betterment-people-solutions</a></dd>
-                    </div>
-                </dl>
-            </article>
-            <article class="card fade-in-up delay-1">
-                <h3>Specialties</h3>
-                <ul class="list-check">
-                    <?php foreach ($specialties as $specialty): ?>
-                        <li><?php echo htmlspecialchars($specialty, ENT_QUOTES, 'UTF-8'); ?></li>
-                    <?php endforeach; ?>
-                </ul>
-            </article>
         </div>
     </div>
 </section>

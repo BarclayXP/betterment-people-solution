@@ -7,8 +7,8 @@ Live address (once published): www.betterment-consulting.com
 ## What's on the website
 
 - **Home**: who we are, our four services, how we work, sector experience and client comments.
-- **Services**: each service in more detail, how long it takes, and the ways clients can work with us.
-- **About**: why the company exists, what we focus on, our guiding principles and company details.
+- **Services**: each of the four services and what it includes, our specialities, and the ways clients can work with us.
+- **About**: why the company exists, what we focus on and our guiding principles.
 - **Contact**: a booking form, our contact details and a QR code for our digital business card.
 
 ## How the booking form works
@@ -38,7 +38,7 @@ Emails are not sent when the site runs on your own computer, but bookings are st
 | Contact email, phone number or the address emails are sent from (updates every page) | `includes/config.php` |
 | The four services: names, summaries and what each includes (updates the Home and Services pages) | `includes/services.php` |
 | Home page wording | `index.php` |
-| Services page wording | `services.php` |
+| Services page wording and specialities | `services.php` |
 | About page wording | `about.php` |
 | Contact page wording | `contact.php` |
 | The "Book a Consultation" banner at the bottom of pages | `partials/cta.php` |

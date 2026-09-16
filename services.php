@@ -5,6 +5,15 @@ $currentPage = 'services';
 
 $services = require __DIR__ . '/includes/services.php';
 
+$specialities = [
+    'Organisational development',
+    'Managerial coaching and soft skills training',
+    'Policy development',
+    'Employee relations',
+    'Rewards and benefits',
+    'Projects to scale business',
+];
+
 $engagementModels = [
     [
         'title' => 'Fixed-Fee Projects',
@@ -52,6 +61,20 @@ include __DIR__ . '/partials/header.php';
                 <a class="text-link card-link" href="contact.php#booking-form">Discuss this service <?php echo icon('arrow-right'); ?></a>
             </article>
         <?php endforeach; ?>
+    </div>
+</section>
+
+<section class="section section-tint">
+    <div class="page-container">
+        <div class="section-heading">
+            <p class="eyebrow">Specialities</p>
+            <h2>Expertise Built Over a Decade of Senior HR Practice</h2>
+        </div>
+        <ul class="speciality-grid">
+            <?php foreach ($specialities as $index => $speciality): ?>
+                <li class="fade-in-up delay-<?php echo $index % 3; ?>"><?php echo htmlspecialchars($speciality, ENT_QUOTES, 'UTF-8'); ?></li>
+            <?php endforeach; ?>
+        </ul>
     </div>
 </section>
 

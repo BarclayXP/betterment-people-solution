@@ -680,6 +680,35 @@ ol {
     background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a7a26' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 12px no-repeat;
 }
 
+/* ===== SPECIALITIES ===== */
+.speciality-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-2);
+}
+
+.speciality-grid li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    color: var(--ink);
+    font-weight: 700;
+}
+
+.speciality-grid li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a7a26' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center / 13px no-repeat;
+}
+
 /* ===== HOW WE WORK TIMELINE ===== */
 .timeline {
     position: relative;
@@ -819,35 +848,6 @@ ol {
 .quote-card figcaption span {
     color: var(--muted);
     font-size: 0.92rem;
-}
-
-/* ===== COMPANY FACTS ===== */
-.facts {
-    margin: var(--space-2) 0 0;
-}
-
-.facts div {
-    display: grid;
-    grid-template-columns: 130px 1fr;
-    gap: var(--space-2);
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-}
-
-.facts div:last-child {
-    border-bottom: 0;
-}
-
-.facts dt {
-    color: var(--muted);
-    font-weight: 600;
-}
-
-.facts dd {
-    margin: 0;
-    color: var(--ink);
-    font-weight: 600;
-    overflow-wrap: anywhere;
 }
 
 /* ===== CALL TO ACTION BAND ===== */
@@ -1323,6 +1323,10 @@ textarea.input {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    .speciality-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .proof-stat {
         max-width: none;
         padding-right: 0;
@@ -1378,6 +1382,7 @@ textarea.input {
 @media (max-width: 640px) {
     .services-grid,
     .services-detail-grid,
+    .speciality-grid,
     .form-grid {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -1409,11 +1414,6 @@ textarea.input {
 
     .cta-secondary {
         font-size: 0.85rem;
-    }
-
-    .facts div {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 2px;
     }
 
     .feature-row {
