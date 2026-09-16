@@ -3,6 +3,24 @@
    Colours are taken from the logo: blue (#21638e) and green (#5e9732).
    ========================================================= */
 
+/* Fonts are served from this website rather than Google, so visitors' details
+   are not shared with a third party. Each file covers every weight used. */
+@font-face {
+    font-family: 'Manrope';
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url('../fonts/manrope-latin.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500 700;
+    font-display: swap;
+    src: url('../fonts/space-grotesk-latin.woff2') format('woff2');
+}
+
 :root {
     --ink: #16212e;
     --text: #334155;
