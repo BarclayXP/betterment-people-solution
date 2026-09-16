@@ -81,3 +81,12 @@ Good habits:
 - `Website Content.pdf` and `Website Content.txt`: the original content brief for the website.
 - `better.png` and `better1.png`: the original logo files. Trimmed versions used on the site are in `assets/img`.
 - `qr.png`: the QR code for the digital business card.
+
+## Photos
+
+The photos in `assets/img` (files starting `photo-`) are resized copies. `photo-executive-meeting`, `photo-coffee-meeting` and `photo-team-desk` were supplied by the client. The others are free stock photos from Pexels, which may be used on a business website without credit (https://www.pexels.com/license/):
+
+- `photo-handshake-coffee` (Contact page): https://www.pexels.com/photo/man-iand-woman-doing-a-handshake-3874034/
+- `photo-leading-meeting` (About page, mirrored): https://www.pexels.com/photo/woman-in-black-suit-presenting-graphs-in-a-meeting-8424459/
+- `photo-team-discussion` (Services page): https://www.pexels.com/photo/group-of-diverse-colleagues-using-laptop-and-talking-in-office-5324992/
+- `photo-leadership-team` ("Book a Consultation" banner): https://www.pexels.com/photo/diverse-colleagues-listening-to-senior-male-executive-at-meeting-in-office-boardroom-3861571/

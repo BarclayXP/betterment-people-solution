@@ -67,7 +67,10 @@ $availableSlots = array_slice(array_diff_key($allSlots, contact_taken_slots($csv
 include __DIR__ . '/partials/header.php';
 ?>
 
-<section class="hero hero-compact">
+<section class="hero hero-compact hero-photo">
+    <div class="hero-media" aria-hidden="true">
+        <img src="assets/img/photo-handshake-coffee.jpg" srcset="assets/img/photo-handshake-coffee-960.jpg 960w, assets/img/photo-handshake-coffee.jpg 1920w" sizes="(max-width: 980px) 100vw, 64vw" alt="" width="1920" height="1280" fetchpriority="high">
+    </div>
     <div class="page-container">
         <div class="hero-copy fade-in-up">
             <p class="eyebrow">Contact</p>

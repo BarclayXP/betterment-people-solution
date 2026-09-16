@@ -927,6 +927,20 @@ ol {
         radial-gradient(circle at 100% 0%, rgba(94, 151, 50, 0.45), transparent 45%),
         linear-gradient(135deg, var(--primary-strong) 0%, var(--primary-deep) 100%);
     box-shadow: var(--shadow-lg);
+    isolation: isolate;
+}
+
+/* Faint meeting photo blended into the banner colour, fading out behind the text. */
+.cta-band::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url('../img/photo-leadership-team.jpg') center 30% / cover no-repeat;
+    opacity: 0.2;
+    mix-blend-mode: luminosity;
+    -webkit-mask-image: linear-gradient(90deg, transparent 15%, #000 75%);
+    mask-image: linear-gradient(90deg, transparent 15%, #000 75%);
 }
 
 .cta-band .eyebrow {

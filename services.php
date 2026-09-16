@@ -87,6 +87,9 @@ include __DIR__ . '/partials/header.php';
             <p class="eyebrow">Ways to Work Together</p>
             <h2>Support That Fits Where Your Business Is Today</h2>
             <p class="lead">No HR jargon, no generic frameworks, and no work that does not lead to clear decisions or measurable improvement.</p>
+            <div class="section-photo fade-in">
+                <img src="assets/img/photo-team-discussion.jpg" srcset="assets/img/photo-team-discussion-640.jpg 640w, assets/img/photo-team-discussion.jpg 1200w" sizes="(max-width: 1240px) 45vw, 560px" alt="" width="1200" height="800" loading="lazy">
+            </div>
         </div>
         <div class="stack-lg">
             <?php foreach ($engagementModels as $index => $model): ?>
