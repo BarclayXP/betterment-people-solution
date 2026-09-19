@@ -31,10 +31,10 @@ $fullTitle = $pageTitle . ' | Betterment People Solutions';
 
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link rel="apple-touch-icon" href="assets/img/favicon.png">
-    <script src="assets/js/early.js"></script>
+    <script src="<?php echo htmlspecialchars(asset('assets/js/early.js'), ENT_QUOTES, 'UTF-8'); ?>"></script>
     <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="assets/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo htmlspecialchars(asset('assets/css/style.css'), ENT_QUOTES, 'UTF-8'); ?>">
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>

@@ -38,6 +38,6 @@
             <p><a href="https://www.betterment-consulting.com">www.betterment-consulting.com</a></p>
         </div>
     </footer>
-    <script src="assets/js/main.js"></script>
+    <script src="<?php echo htmlspecialchars(asset('assets/js/main.js'), ENT_QUOTES, 'UTF-8'); ?>"></script>
 </body>
 </html>

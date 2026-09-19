@@ -17,6 +17,14 @@ function phone_href(string $phone): string
     return 'tel:' . ($digits !== '' && $digits[0] === '0' ? '+44' . substr($digits, 1) : $digits);
 }
 
+// Adds the file's last-changed time to its address (style.css?v=1726764640), so after
+// each update browsers fetch the new file instead of reusing an old cached copy.
+function asset(string $path): string
+{
+    $file = dirname(__DIR__) . '/' . $path;
+    return is_file($file) ? $path . '?v=' . filemtime($file) : $path;
+}
+
 function site_is_https(): bool
 {
     return (!empty($_SERVER['HTTPS']) && strtolower((string) $_SERVER['HTTPS']) !== 'off')
