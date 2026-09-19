@@ -1,0 +1,11 @@
+---
+# Used by cPanel "Git Version Control" when you click "Deploy HEAD Commit".
+# Copies only the website files into public_html. Working files such as README.md,
+# router.php, start-site.bat, the content brief and the original logos stay out.
+# Saved bookings in public_html/storage are kept: nothing here deletes files.
+deployment:
+  tasks:
+    - export DEPLOYPATH="$HOME/public_html/"
+    - test -d "$DEPLOYPATH" || exit 1
+    - /bin/cp index.php about.php services.php contact.php qr.png .htaccess "$DEPLOYPATH"
+    - /bin/cp -R assets includes partials storage "$DEPLOYPATH"

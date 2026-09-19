@@ -58,7 +58,28 @@ When editing wording, change only the words themselves. Leave the quote marks, b
 - [ ] Check the private folders are blocked: open www.betterment-consulting.com/storage/.htaccess and www.betterment-consulting.com/includes/config.php in a browser. Both must show an error page, not a file.
 - [ ] Add a privacy notice explaining how you use the details people send through the form, and how long you keep them (a UK GDPR requirement).
 - [ ] Confirm the client comments on the home page are real quotes you have permission to use.
-- [ ] Upload only the website files. Leave out the `.git` folder, `Website Content.pdf`, `Website Content.txt`, `start-site.bat`, `router.php` and this README.
+- [ ] Upload only the website files. Leave out the `.git` folder, `Website Content.pdf`, `Website Content.txt`, `start-site.bat`, `router.php` and this README. Uploading with cPanel's Git Version Control (below) does this for you.
+
+## Putting the website online with cPanel
+
+The live site is in `public_html` on the cPanel hosting. cPanel's **Git Version Control** copies the site from GitHub, and `.cpanel.yml` tells it which files to put in `public_html`.
+
+**First time only**
+
+1. Download a backup of everything in `public_html`, especially any `storage` folder, which may hold real bookings.
+2. Delete the old website files from `public_html`, keeping any `storage` folder with bookings in it. Deploying adds and replaces files but never removes old ones.
+3. In cPanel, go to **Files → Git™ Version Control → Create**. Turn on **Clone a Repository** and enter:
+   - Clone URL: `https://github.com/BarclayXP/betterment-people-solution.git`
+   - Repository Path: `repositories/betterment` (not `public_html`)
+   - Repository Name: `Betterment website`
+4. Click **Create**, then **Manage → Pull or Deploy → Deploy HEAD Commit**.
+5. Open the website and work through the checklist above.
+
+**Every update after that**
+
+1. Push the changes to GitHub.
+2. In cPanel, go to **Git™ Version Control → Manage → Pull or Deploy**.
+3. Click **Update from Remote**, then **Deploy HEAD Commit**.
 
 ## Keeping the website secure
 
